@@ -2,8 +2,8 @@
 	
 Scenario: Page is displayed
 //Given I am completing an application
-Given I am on the Business details page
-#Then I can see the progress indicator control
+When I am on the Business details page
+Then I can see the progress indicator control
 And I can see the Save And continue button
 And I can see the Business name field
 And I can see the Companies House registration number field

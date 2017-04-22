@@ -111,11 +111,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>US170_NewAccount.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\Sprint_1\US196_BusinessDetails.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>US196_BusinessDetails.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Sprint_1\US198_ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,7 +193,6 @@
     <Compile Include="Pages\ProjectDetailsPageFactory.cs" />
     <Compile Include="Pages\AzureLoginPage.cs" />
     <Compile Include="Step_Definitions\Sprint_1\US198_ProjectDetailsSteps.cs" />
-    <Compile Include="Step_Definitions\Sprint_1\US196_BusinessDetailsSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_2\US179_EditPagesViaPreviewPageSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_1\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,10 +225,6 @@
     <None Include="Features\Sprint_1\US170_NewAccount.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>US170_NewAccount.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Sprint_1\US196_BusinessDetails.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>US196_BusinessDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Sprint_1\US198_ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -68,7 +68,9 @@ namespace UnitTestProject1.Features.Sprint_3
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 5
-testRunner.Given("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+testRunner.Then("I can see the progress indicator control", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 7
 testRunner.And("I can see the Save And continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
@@ -150,7 +152,9 @@ testRunner.And("I can see the No radio button to the De minimis question", ((str
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 5
-testRunner.Given("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+testRunner.Then("I can see the progress indicator control", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 7
 testRunner.And("I can see the Save And continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8

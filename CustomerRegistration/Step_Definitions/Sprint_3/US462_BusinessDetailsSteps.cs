@@ -188,8 +188,13 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             ScenarioContext.Current.Pending();
         }
+        [Then(@"I can see the progress indicator control")]
+        public void ThenICanSeeTheProgressIndicatorControl()
+        {
+            ScenarioContext.Current.Pending();
+        }
 
-        
+
         [Then(@"the Project details page is displayed")]
         public void ThenTheProjectDetailsPageIsDisplayed()
         {
@@ -200,34 +205,34 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             ScenarioContext.Current.Pending();
         }
-        [Given(@"I can see the Save And continue button")]
+        [When(@"I can see the Save And continue button")]
         public void GivenICanSeeTheSaveAndContinueButton()
         {
             var commonElement = new CommonElement(driver);
             commonElement.VerifySaveAndContinueBtn();
         }
 
-        [Given(@"I can see the Business name field")]
+        [When(@"I can see the Business name field")]
         public void GivenICanSeeTheBusinessNameField()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.VerifyCompanyNameField();
         }
-        [Given(@"I can see the Companies House registration number field")]
+        [When(@"I can see the Companies House registration number field")]
         public void GivenICanSeeTheCompaniesHouseRegistrationNumberField()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.VerifycompanyRegNoField();
 
         }
-            [Given(@"I can see the SME radio button option")]
+            [Then(@"I can see the SME radio button option")]
         public void GivenICanSeeTheSMERadioButtonOption()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifySMERadioBtn();
 
         }
-        [Given(@"I can see the Large enterprise radio button option")]
+        [Then(@"I can see the Large enterprise radio button option")]
         public void GivenICanSeeTheLargeEnterpriseRadioButtonOption()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
@@ -243,7 +248,7 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
             }
             */
         }
-        [Given(@"I can see the Yes radio button to the De minimis question")]
+        [Then(@"I can see the Yes radio button to the De minimis question")]
         public void GivenICanSeeTheYesRadioButtonToTheDeMinimisQuestion()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
@@ -260,7 +265,7 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
             */
         }
 
-        [Given(@"I can see the No radio button to the De minimis question")]
+        [Then(@"I can see the No radio button to the De minimis question")]
         public void GivenICanSeeTheNoRadioButtonToTheDeMinimisQuestion()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
