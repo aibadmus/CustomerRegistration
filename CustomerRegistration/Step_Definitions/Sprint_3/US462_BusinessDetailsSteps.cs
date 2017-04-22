@@ -18,7 +18,7 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         IWebDriver driver;
 
 
-        [Given(@"I am on the Business details page")]
+        [When(@"I am on the Business details page")]
         public void  GivenIAmOnTheBusinessDetailsPage()
         {
 
@@ -54,12 +54,6 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
        
         }
         
-        [When(@"I am on the Business details page")]
-        public void WhenIAmOnTheBusinessDetailsPage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
         [When(@"I select '(.*)' on the de minimis question")]
         public void WhenISelectOnTheDeMinimisQuestion(string p0)
         {
@@ -89,47 +83,11 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             var commonElement = new CommonElement(driver);
             commonElement.ClickSaveAndContinue();
-        }
-
-        [Then(@"I can see the Save And continue button")]
-        public void ThenICanSeeTheSaveAndContinueButton()
-        {
-            ScenarioContext.Current.Pending();
-
-        }
-
-        [Then(@"I can see the Companies House registration number field")]
-        public void ThenICanSeeTheCompaniesHouseRegistrationNumberField()
-        {
-            ScenarioContext.Current.Pending();
+        
         }
         
         [Then(@"I can see the de minimis question")]
         public void ThenICanSeeTheDeMinimisQuestion()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the help text '(.*)' is displayed under the Company name question")]
-        public void ThenTheHelpTextIsDisplayedUnderTheCompanyNameQuestion(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the help text '(.*)' is displayed under the Company registration number question")]
-        public void ThenTheHelpTextIsDisplayedUnderTheCompanyRegistrationNumberQuestion(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the help text '(.*)'re an SME if you have fewer than (.*) employees with an annual turnover of less than EURO (.*)m And are independent\. You'(.*)' is displayed under the SME question")]
-        public void ThenTheHelpTextReAnSMEIfYouHaveFewerThanEmployeesWithAnAnnualTurnoverOfLessThanEUROMAndAreIndependent_YouIsDisplayedUnderTheSMEQuestion(string p0, int p1, int p2, string p3)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [Then(@"the help text '(.*)'re notified in writing if awarded this type of aid\. You need to tell us about de minimis aid as there'(.*)' is displayed under the de minimis question")]
-        public void ThenTheHelpTextReNotifiedInWritingIfAwardedThisTypeOfAid_YouNeedToTellUsAboutDeMinimisAidAsThereIsDisplayedUnderTheDeMinimisQuestion(string p0, string p1)
         {
             ScenarioContext.Current.Pending();
         }
@@ -191,7 +149,8 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         [Then(@"I can see the progress indicator control")]
         public void ThenICanSeeTheProgressIndicatorControl()
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyProgressIndicator();
         }
 
 
@@ -199,33 +158,29 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         public void ThenTheProjectDetailsPageIsDisplayed()
         {
             ScenarioContext.Current.Pending();
+       
         }
-        [Then(@"I can see the Business name field")]
-        public void ThenICanSeeTheBusinessNameField()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        [When(@"I can see the Save And continue button")]
+        [Then(@"I can see the Save And continue button")]
         public void GivenICanSeeTheSaveAndContinueButton()
         {
             var commonElement = new CommonElement(driver);
             commonElement.VerifySaveAndContinueBtn();
         }
 
-        [When(@"I can see the Business name field")]
+        [Then(@"I can see the Business name field")]
         public void GivenICanSeeTheBusinessNameField()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.VerifyCompanyNameField();
         }
-        [When(@"I can see the Companies House registration number field")]
+        [Then(@"I can see the Companies House registration number field")]
         public void GivenICanSeeTheCompaniesHouseRegistrationNumberField()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.VerifycompanyRegNoField();
 
         }
-            [Then(@"I can see the SME radio button option")]
+          [Then(@"I can see the SME radio button option")]
         public void GivenICanSeeTheSMERadioButtonOption()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
@@ -237,32 +192,14 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifyEnterpriseRadioBtn();
-            /*
-            if (IsElementPresent(By.Id("companyTypeEnterprise")))
-            {
-                Console.WriteLine("Pass");
-            }
-            else
-            {
-                Console.WriteLine("Fail");
-            }
-            */
+          
         }
         [Then(@"I can see the Yes radio button to the De minimis question")]
         public void GivenICanSeeTheYesRadioButtonToTheDeMinimisQuestion()
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifyDeMinimisYesRadioBtn();
-            /*
-            if (IsElementPresent(By.Id("minimisSupportYes")))
-            {
-                Console.WriteLine("Pass");
-            }
-            else
-            {
-                Console.WriteLine("Fail");
-            }
-            */
+          
         }
 
         [Then(@"I can see the No radio button to the De minimis question")]
@@ -270,17 +207,7 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifyDeMinimisNoRadioBtn();
-            /*
-
-            if (IsElementPresent(By.Id("minimisSupportNo")))
-            {
-                Console.WriteLine("Pass");
-            }
-            else
-            {
-                Console.WriteLine("Fail");
-            }
-            */
+            
         }
 
 

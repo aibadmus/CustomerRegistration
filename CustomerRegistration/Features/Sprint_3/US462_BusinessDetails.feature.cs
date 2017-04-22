@@ -89,6 +89,81 @@ testRunner.And("I can see the No radio button to the De minimis question", ((str
             this.ScenarioCleanup();
         }
         
+        [TechTalk.SpecRun.ScenarioAttribute("Help is displayed", SourceLine=14)]
+        public virtual void HelpIsDisplayed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Help is displayed", ((string[])(null)));
+#line 15
+this.ScenarioSetup(scenarioInfo);
+#line 17
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+testRunner.Then("the help text is displayed under the Company name question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+testRunner.And("the help text is displayed under the Company registration number question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+testRunner.And("the help text is displayed under the SME question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+testRunner.And("the help text is displayed under the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Answering no to the de minimis question", SourceLine=22)]
+        public virtual void AnsweringNoToTheDeMinimisQuestion()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering no to the de minimis question", ((string[])(null)));
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 25
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+testRunner.When("I select \'no\' on the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+testRunner.Then("a check box appears with the following label: I confirm that I haven\'t received a" +
+                    "ny de minimis aid in my last 3 financial years.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Answering yes to the de minimis question", SourceLine=28)]
+        public virtual void AnsweringYesToTheDeMinimisQuestion()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering yes to the de minimis question", ((string[])(null)));
+#line 29
+this.ScenarioSetup(scenarioInfo);
+#line 31
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+testRunner.When("I select \'yes\' on the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+testRunner.Then("I see Type of de minimis table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+testRunner.Then("I see Financial Year table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+testRunner.Then("I see Amount text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Adding additional rows to the de minimis table", SourceLine=36)]
+        public virtual void AddingAdditionalRowsToTheDeMinimisTable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding additional rows to the de minimis table", ((string[])(null)));
+#line 37
+this.ScenarioSetup(scenarioInfo);
+#line 39
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+testRunner.And("I have answered \'yes\' to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+testRunner.When("I click on the button Add more rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+testRunner.Then("an additional data entry row is added to the bottom of the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [TechTalk.SpecRun.TestRunCleanup()]
         public virtual void TestRunCleanup()
         {
@@ -169,6 +244,85 @@ testRunner.And("I can see the Large enterprise radio button option", ((string)(n
 testRunner.And("I can see the Yes radio button to the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
 testRunner.And("I can see the No radio button to the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Help is displayed")]
+        public virtual void HelpIsDisplayed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Help is displayed", ((string[])(null)));
+#line 15
+this.ScenarioSetup(scenarioInfo);
+#line 17
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+testRunner.Then("the help text is displayed under the Company name question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+testRunner.And("the help text is displayed under the Company registration number question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+testRunner.And("the help text is displayed under the SME question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+testRunner.And("the help text is displayed under the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Answering no to the de minimis question")]
+        public virtual void AnsweringNoToTheDeMinimisQuestion()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering no to the de minimis question", ((string[])(null)));
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 25
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+testRunner.When("I select \'no\' on the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+testRunner.Then("a check box appears with the following label: I confirm that I haven\'t received a" +
+                    "ny de minimis aid in my last 3 financial years.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Answering yes to the de minimis question")]
+        public virtual void AnsweringYesToTheDeMinimisQuestion()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering yes to the de minimis question", ((string[])(null)));
+#line 29
+this.ScenarioSetup(scenarioInfo);
+#line 31
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+testRunner.When("I select \'yes\' on the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+testRunner.Then("I see Type of de minimis table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+testRunner.Then("I see Financial Year table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+testRunner.Then("I see Amount text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Adding additional rows to the de minimis table")]
+        public virtual void AddingAdditionalRowsToTheDeMinimisTable()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding additional rows to the de minimis table", ((string[])(null)));
+#line 37
+this.ScenarioSetup(scenarioInfo);
+#line 39
+testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+testRunner.And("I have answered \'yes\' to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+testRunner.When("I click on the button Add more rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 42
+testRunner.Then("an additional data entry row is added to the bottom of the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

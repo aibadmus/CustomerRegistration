@@ -12,6 +12,9 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "companyName")]
         public IWebElement CompanyNameTxtField { get; set; }
 
+        [FindsBy(How =How.Id,Using = "progress--indicator")]
+        public IWebElement ProgressIndicator { get; set; }
+
         [FindsBy(How = How.Id, Using = "companyRegNo")]
         public IWebElement CompanyRegNoTxtField { get; set; }
 
@@ -89,6 +92,10 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             bool isElementDisplayed = MinimisSupportNoRadioBtn.Displayed;
 
+        }
+        public void verifyProgressIndicator()
+        {
+            bool isElementDisplayed = ProgressIndicator.Displayed;
         }
 
         //Select Elements

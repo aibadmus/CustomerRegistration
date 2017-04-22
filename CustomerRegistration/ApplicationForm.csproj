@@ -96,26 +96,6 @@
   <ItemGroup>
     <Compile Include="Config\BrowserConfig.cs" />
     <Compile Include="Config\FormDetails.cs" />
-    <Compile Include="Features\Sprint_1\HomePage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HomePage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Sprint_2\US179_EditPagesViaPreviewPage.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>US179_EditPagesViaPreviewPage.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Sprint_1\US170_NewAccount.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>US170_NewAccount.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\Sprint_1\US198_ProjectDetails.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>US198_ProjectDetails.feature</DependentUpon>
-    </Compile>
     <Compile Include="Features\Sprint_3\US463_ProjectDetails.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,11 +172,7 @@
     <Compile Include="Pages\GrantsHomePageFactory.cs" />
     <Compile Include="Pages\ProjectDetailsPageFactory.cs" />
     <Compile Include="Pages\AzureLoginPage.cs" />
-    <Compile Include="Step_Definitions\Sprint_1\US198_ProjectDetailsSteps.cs" />
-    <Compile Include="Step_Definitions\Sprint_2\US179_EditPagesViaPreviewPageSteps.cs" />
-    <Compile Include="Step_Definitions\Sprint_1\HomePageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Step_Definitions\Sprint_1\US170_NewAccountSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_3\US462_BusinessDetailsSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_3\US463_ProjectDetailsSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_3\US464_ProjectOutputsSteps.cs" />
@@ -217,18 +193,6 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Features\Sprint_2\US179_EditPagesViaPreviewPage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>US179_EditPagesViaPreviewPage.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Sprint_1\US170_NewAccount.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>US170_NewAccount.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\Sprint_1\US198_ProjectDetails.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>US198_ProjectDetails.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Sprint_3\US463_ProjectDetails.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -284,10 +248,6 @@
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Features\Sprint_1\HomePage.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>HomePage.feature.cs</LastGenOutput>
     </None>
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">

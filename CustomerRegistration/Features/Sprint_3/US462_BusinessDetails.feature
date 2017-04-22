@@ -12,33 +12,35 @@ And I can see the Large enterprise radio button option
 And I can see the Yes radio button to the De minimis question
 And I can see the No radio button to the De minimis question
 
-#
-#Scenario: Help is displayed
+Scenario: Help is displayed
 #Given I am completing an application
-#When I am on the Business details page
-#Then the help text 'The name of your company as registered at Companies House.' is displayed under the Company name question
-#And the help text 'You can find your unique 10 digit number on the Companies House website.' is displayed under the Company registration number question
-#And the help text 'You're an SME if you have fewer than 250 employees with an annual turnover of less than EURO 50m And are independent. You're independent as long as no large enterprise(s) own more than 25% of your capital or voting rights.' is displayed under the SME question
-#And the help text 'De minimis aid is a type of public sector funding. You're notified in writing if awarded this type of aid. You need to tell us about de minimis aid as there's a limit to the funding you can get over a 3-year period.' is displayed under the de minimis question
-#
-#Scenario: Answering no to the de minimis question
-#Given I am on the Business details page
-#When I select 'no' on the de minimis question
-#Then a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last 3 financial years.
-#
-#Scenario: Answering yes to the de minimis question
-#Given I am on the Business details page
-#When I select 'yes' on the de minimis question
-#Then I see Type of de minimis table drop down option
-#Then I see Financial Year table drop down option
-#Then I see Amount text field
-#
-#Scenario: Adding additional rows to the de minimis table
-#Given I am on the Business details page
-#And I have answered 'yes' to the de minimis question
-#When I click on the button Add more rows
-#Then an additional data entry row is added to the bottom of the table
-#
+When I am on the Business details page
+Then the help text is displayed under the Company name question
+And the help text is displayed under the Company registration number question
+And the help text is displayed under the SME question
+And the help text is displayed under the De minimis question
+ 
+Scenario: Answering no to the de minimis question
+#Given I am completing an application
+When I am on the Business details page
+When I select 'no' on the de minimis question
+Then a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last 3 financial years.
+
+Scenario: Answering yes to the de minimis question
+#Given I am completing an application
+When I am on the Business details page
+When I select 'yes' on the de minimis question
+Then I see Type of de minimis table drop down option
+Then I see Financial Year table drop down option
+Then I see Amount text field
+
+Scenario: Adding additional rows to the de minimis table
+#Given I am completing an application
+When I am on the Business details page
+And I have answered 'yes' to the de minimis question
+When I click on the button Add more rows
+Then an additional data entry row is added to the bottom of the table
+
 #Scenario: Removing rows to the de minimis table
 #Given I am on the Business details page
 #And I have answered 'yes' to the de minimis question
