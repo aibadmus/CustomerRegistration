@@ -22,7 +22,7 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         public void  GivenIAmOnTheBusinessDetailsPage()
         {
 
-            driver = new ChromeDriver(@"C:\Users\Badmus\Test\chromedriver");
+            driver = new ChromeDriver(@"C:\Users\aibad\Test\chromedriver");
             driver.Navigate().GoToUrl("http://qa1grantweb.azurewebsites.net/grants/home");
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(50));
           //  driver.FindElement(By.Id("start-application")).Click();
@@ -40,30 +40,31 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
             scotentAzureLoginPage.AzureLogIn();
             
         }
-
-        [Given(@"I have answered '(.*)' to the de minimis question")]
-        public void GivenIHaveAnsweredToTheDeMinimisQuestion(string p0)
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
         [Given(@"I have clicked on the button Add more rows")]
         public void GivenIHaveClickedOnTheButtonAddMoreRows()
         {
-            ScenarioContext.Current.Pending();
-       
+            ScenarioContext.Current.Pending();   
         }
-        
-        [When(@"I select '(.*)' on the de minimis question")]
+              
+        [When(@"I select NO on the de minimis question")]
         public void WhenISelectOnTheDeMinimisQuestion(string p0)
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.SelectDeMinimisNoRadioBtn();
         }
-        
+
+        [When(@"I have answered YES to the de minimis question")]
+        public void WhenIHaveAnsweredYESToTheDeMinimisQuestion()
+        {
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.SelectDeMinimisYesRadioBtn();
+        }
+
         [When(@"I click on the button Add more rows")]
         public void WhenIClickOnTheButtonAddMoreRows()
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.SelectAddMoreRowsBtn();
         }
         
         [When(@"I click on the button Delete row")]
@@ -83,44 +84,42 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             var commonElement = new CommonElement(driver);
             commonElement.ClickSaveAndContinue();
-        
-        }
-        
-        [Then(@"I can see the de minimis question")]
-        public void ThenICanSeeTheDeMinimisQuestion()
-        {
-            ScenarioContext.Current.Pending();
         }
         
         [Then(@"a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last (.*) financial years\.")]
         public void ThenACheckBoxAppearsWithTheFollowingLabelIConfirmThatIHavenTReceivedAnyDeMinimisAidInMyLastFinancialYears_(int p0)
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyDeMinimisNotReceived();
         }
 
         [Then(@"I see Type of de minimis table drop down option")]
         public void ThenISeeTypeOfDeMinimisTableDropDownOption()
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyDeMinimisTypeDropDown();
         }
 
         [Then(@"I see Financial Year table drop down option")]
         public void ThenISeeFinancialYearTableDropDownOption()
         {
-            ScenarioContext.Current.Pending();
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyFinancialYearDropDown();
         }
 
         [Then(@"I see Amount text field")]
         public void ThenISeeAmountTextField()
         {
-            ScenarioContext.Current.Pending();
-
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyDeminimisAmount();
         }
 
         [Then(@"an additional data entry row is added to the bottom of the table")]
         public void ThenAnAdditionalDataEntryRowIsAddedToTheBottomOfTheTable()
         {
-            ScenarioContext.Current.Pending();
+
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyAddedDeMinimisRow();
         }
         
         [Then(@"the row I am on is removed from the table")]
@@ -207,25 +206,40 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         {
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifyDeMinimisNoRadioBtn();
-            
+        }
+        [Then(@"the help text is displayed under the Company name question")]
+        public void ThenTheHelpTextIsDisplayedUnderTheCompanyNameQuestion()
+        {
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.VerifyCompanyNameHelpTxt();
+        }
+        [Then(@"the help text is displayed under the Company registration number question")]
+        public void ThenTheHelpTextIsDisplayedUnderTheCompanyRegistrationNumberQuestion()
+        {
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.VerifyCompanyRegNoHelpTxt();
+        }
+        [Then(@"I see the Companies House Website Link")]
+        public void ThenISeeTheCompaniesHouseWebsiteLink()
+        {
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.VerifyCompanyHouseWebsiteLink();
+        }
+        [Then(@"the help text is displayed under the SME question")]
+        public void ThenTheHelpTextIsDisplayedUnderTheSMEQuestion()
+        {
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.VerifyCompanyTypeHelpTxt();
         }
 
-
-
-
-        private bool IsElementPresent(By by)
+        [Then(@"the help text is displayed under the De minimis question")]
+        public void ThenTheHelpTextIsDisplayedUnderTheDeMinimisQuestion()
         {
-            try
-            {
-                driver.FindElement(by);
-                return true;
-            }
-            catch (NoSuchElementException)
-            
-            {
-                return false;
-            }
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.verifyDeMinimisHelpTxt();
         }
 
     }
+
 }
+

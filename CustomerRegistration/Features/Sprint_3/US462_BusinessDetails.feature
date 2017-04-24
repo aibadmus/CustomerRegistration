@@ -16,20 +16,21 @@ Scenario: Help is displayed
 #Given I am completing an application
 When I am on the Business details page
 Then the help text is displayed under the Company name question
-And the help text is displayed under the Company registration number question
-And the help text is displayed under the SME question
-And the help text is displayed under the De minimis question
+Then the help text is displayed under the Company registration number question
+Then I see the Companies House Website Link
+Then the help text is displayed under the SME question
+Then the help text is displayed under the De minimis question
  
 Scenario: Answering no to the de minimis question
 #Given I am completing an application
 When I am on the Business details page
-When I select 'no' on the de minimis question
+When I select NO on the de minimis question
 Then a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last 3 financial years.
 
 Scenario: Answering yes to the de minimis question
 #Given I am completing an application
 When I am on the Business details page
-When I select 'yes' on the de minimis question
+And I have answered YES to the de minimis question
 Then I see Type of de minimis table drop down option
 Then I see Financial Year table drop down option
 Then I see Amount text field
@@ -37,7 +38,7 @@ Then I see Amount text field
 Scenario: Adding additional rows to the de minimis table
 #Given I am completing an application
 When I am on the Business details page
-And I have answered 'yes' to the de minimis question
+And I have answered YES to the de minimis question
 When I click on the button Add more rows
 Then an additional data entry row is added to the bottom of the table
 

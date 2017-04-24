@@ -12,20 +12,32 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "companyName")]
         public IWebElement CompanyNameTxtField { get; set; }
 
+        [FindsBy(How =How.Id,Using = "companyNameHelp")]
+        public IWebElement CompanyNameHelpTxt { get; set; }
+
         [FindsBy(How =How.Id,Using = "progress--indicator")]
         public IWebElement ProgressIndicator { get; set; }
 
         [FindsBy(How = How.Id, Using = "companyRegNo")]
         public IWebElement CompanyRegNoTxtField { get; set; }
 
+        [FindsBy(How =How.Id,Using = "companyRegNoHelp")]
+        public IWebElement CompanyRegNoHelpTxt { get; set; }
+
         [FindsBy(How = How.CssSelector, Using = "#companyRegNoHelp > a")]
         public IWebElement CompanyHouseWebsiteLink { get; set; }
+        
+        [FindsBy(How =How.Id,Using = "companyTypeOptionsHelp")]
+        public IWebElement CompanyTypeOption { get; set; }
 
         [FindsBy(How = How.Id, Using = "companyTypeSME")]
         public IWebElement CompanyTypeSMERadioBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "companyTypeEnterprise")]
         public IWebElement CompanyTypeEnterpriseRadioBtn { get; set; }
+
+        [FindsBy(How =How.Id,Using = "minimisSupportOptionsHelp")]
+        public IWebElement DeMinimisHelpTxt { get; set; }
 
         [FindsBy(How = How.Id, Using = "minimisSupportNo")]
         public IWebElement MinimisSupportNoRadioBtn { get; set; }
@@ -36,7 +48,7 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "isDeMinimisSupportNotreceived")]
         public IWebElement NotReceivedDeMinimisCheckBox { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > select")]
+        [FindsBy(How =How.Id,Using ="deMinimisType0")]
         public IWebElement TypeOfDeMinimisDropDown { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > select > option:nth-child(1)")]
@@ -57,8 +69,11 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "undefined")]
         public IWebElement AddMoreRows { get; set; }
 
-        [FindsBy(How = How.Id, Using = "amount_dbf990a9-e182-4159-ae9d-08d450d41aa4")]
-        public IWebElement BusinessDetailsAmountTxtField { get; set; }
+        [FindsBy(How = How.Id, Using = "amount_0")]
+        public IWebElement DeMinimisAmountField { get; set; }
+        
+        [FindsBy(How =How.Id,Using = "deMinimisType2")]
+        public IWebElement SecondDeMinimisRow { get; set; }
 
 
         public BusinessDetailsPageFactory(IWebDriver driver)
@@ -71,9 +86,27 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             bool isElementDisplayed = CompanyNameTxtField.Displayed;
         }
+        public void VerifyCompanyNameHelpTxt()
+        {
+            bool isElementDisplayed = CompanyNameHelpTxt.Displayed;
+        }
         public void VerifycompanyRegNoField()
         {
             bool isElementDisplayed = CompanyRegNoTxtField.Displayed;
+        }
+        public void VerifyCompanyRegNoHelpTxt()
+        {
+            bool isElementDisplayed = CompanyRegNoHelpTxt.Displayed;
+        }
+        
+        public void VerifyCompanyHouseWebsiteLink()
+        {
+            bool isElementDisplayed = CompanyHouseWebsiteLink.Displayed;
+        }
+
+        public void VerifyCompanyTypeHelpTxt()
+        {
+            bool isElementDisplayed = CompanyTypeOption.Displayed;
         }
         public void verifySMERadioBtn()
         {
@@ -86,18 +119,43 @@ namespace UnitTestProject1.BusinessDetailsPage
         public void verifyDeMinimisYesRadioBtn()
         {
             bool isElementDisplayed = MinimisSupportYesRadioBtn.Displayed;
-
+        }
+        public void verifyDeMinimisHelpTxt()
+        {
+            bool isElementDisplayed = DeMinimisHelpTxt.Displayed;
         }
         public void verifyDeMinimisNoRadioBtn()
         {
             bool isElementDisplayed = MinimisSupportNoRadioBtn.Displayed;
-
+        }
+        public void verifyDeMinimisNotReceived()
+        {
+            bool isElementDisplayed = NotReceivedDeMinimisCheckBox.Displayed;
+        }
+        public void verifyDeMinimisTypeDropDown()
+        {
+            bool isElementDisplayed = TypeOfDeMinimisDropDown.Displayed;
+        }
+        public void verifyFinancialYearDropDown()
+        {
+            bool isElementDisplayed = FinancialYearDropDown.Displayed;
+        }
+        public void verifyDeminimisAmount()
+        {
+            bool isElementDisplayed = DeMinimisAmountField.Displayed;
+        }
+        public void verifyAddMoreDeMinimisRowBtn()
+        {
+            bool isElementDisplayed = AddMoreRows.Displayed;
         }
         public void verifyProgressIndicator()
         {
             bool isElementDisplayed = ProgressIndicator.Displayed;
         }
-
+        public void verifyAddedDeMinimisRow()
+        {
+            bool isElementDisplayed = SecondDeMinimisRow.Displayed;
+        }
         //Select Elements
         public void SelectCompanyRegNoField()
         {
@@ -115,13 +173,17 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             CompanyTypeEnterpriseRadioBtn.Click();
         }
-        public void SelecDeMinimisYesRadioBtn()
+        public void SelectDeMinimisYesRadioBtn()
         {
-            MinimisSupportYesRadioBtn.Click();
+            MinimisSupportYesRadioBtn.Submit();
         }
         public void SelectDeMinimisNoRadioBtn()
         {
             MinimisSupportNoRadioBtn.Click();
+        }
+        public void SelectAddMoreRowsBtn()
+        {
+            AddMoreRows.Click();
         }
     }
 }   
