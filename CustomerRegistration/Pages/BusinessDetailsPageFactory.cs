@@ -42,13 +42,13 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "minimisSupportNo")]
         public IWebElement MinimisSupportNoRadioBtn { get; set; }
 
-        [FindsBy(How = How.Id, Using = "minimisSupportYes")]
+        [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(3)")]
         public IWebElement MinimisSupportYesRadioBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "isDeMinimisSupportNotreceived")]
         public IWebElement NotReceivedDeMinimisCheckBox { get; set; }
 
-        [FindsBy(How =How.Id,Using ="deMinimisType0")]
+        [FindsBy(How =How.CssSelector,Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(2) > td:nth-child(1)")]
         public IWebElement TypeOfDeMinimisDropDown { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > select > option:nth-child(1)")]
@@ -63,13 +63,13 @@ namespace UnitTestProject1.BusinessDetailsPage
         [FindsBy(How = How.Id, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > select > option:nth-child(4)")]
         public IWebElement RoadTransportDeminimis { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(2) > select")]
+        [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(2) > td:nth-child(2)")]
         public IWebElement FinancialYearDropDown { get; set; }
 
-        [FindsBy(How = How.Id, Using = "undefined")]
+        [FindsBy(How = How.CssSelector, Using = "#undefined")]
         public IWebElement AddMoreRows { get; set; }
 
-        [FindsBy(How = How.Id, Using = "amount_0")]
+        [FindsBy(How = How.CssSelector, Using = "#amount_0Input")]
         public IWebElement DeMinimisAmountField { get; set; }
         
         [FindsBy(How =How.Id,Using = "deMinimisType2")]
@@ -118,6 +118,7 @@ namespace UnitTestProject1.BusinessDetailsPage
         }
         public void verifyDeMinimisYesRadioBtn()
         {
+
             bool isElementDisplayed = MinimisSupportYesRadioBtn.Displayed;
         }
         public void verifyDeMinimisHelpTxt()
@@ -130,6 +131,7 @@ namespace UnitTestProject1.BusinessDetailsPage
         }
         public void verifyDeMinimisNotReceived()
         {
+            //bool isElementDisplayed = driver.FindElement(By.Id("isDeMinimisSupportNotreceived")).Displayed;
             bool isElementDisplayed = NotReceivedDeMinimisCheckBox.Displayed;
         }
         public void verifyDeMinimisTypeDropDown()
@@ -175,11 +177,17 @@ namespace UnitTestProject1.BusinessDetailsPage
         }
         public void SelectDeMinimisYesRadioBtn()
         {
-            MinimisSupportYesRadioBtn.Submit();
+            IWebElement oCheckBox = driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(3)"));
+            System.Threading.Thread.Sleep(5000);
+            oCheckBox.Click();
+
+            //IWebElement radioBtn = MinimisSupportYesRadioBtn;
         }
         public void SelectDeMinimisNoRadioBtn()
         {
-            MinimisSupportNoRadioBtn.Click();
+            IWebElement oCheckBox = driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(4)"));
+            System.Threading.Thread.Sleep(5000);
+            oCheckBox.Click();
         }
         public void SelectAddMoreRowsBtn()
         {

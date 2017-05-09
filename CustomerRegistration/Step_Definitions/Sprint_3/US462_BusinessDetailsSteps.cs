@@ -8,7 +8,7 @@ using UnitTestProject1.BrowserSettings;
 using UnitTestProject1.HomeObjects;
 using UnitTestProject1.BusinessDetailsPage;
 using UnitTestProject1.CommonElementPageFactory;
-
+using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject1.Step_Definitions.Sprint_3
 {
@@ -47,30 +47,42 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         }
               
         [When(@"I select NO on the de minimis question")]
-        public void WhenISelectOnTheDeMinimisQuestion(string p0)
+        public void WhenISelectOnTheDeMinimisQuestion()
         {
+            /*
+            IWebElement oCheckBox = driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(4)"));
+            System.Threading.Thread.Sleep(5000);
+            oCheckBox.Click();
+            
+             */
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.SelectDeMinimisNoRadioBtn();
+           
         }
 
         [When(@"I have answered YES to the de minimis question")]
         public void WhenIHaveAnsweredYESToTheDeMinimisQuestion()
         {
+           
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.SelectDeMinimisYesRadioBtn();
+            
+        }
+        [When(@"I click on the Add more rows button")]
+        public void WhenIClickOnTheAddMoreRowsButton()
+        {
+            driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(3) > td:nth-child(2)")).Click();
+            /*
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            businessDetailsPageFactory.SelectAddMoreRowsBtn(); 
+            */
+            
         }
 
-        [When(@"I click on the button Add more rows")]
-        public void WhenIClickOnTheButtonAddMoreRows()
-        {
-            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
-            businessDetailsPageFactory.SelectAddMoreRowsBtn();
-        }
-        
         [When(@"I click on the button Delete row")]
         public void WhenIClickOnTheButtonDeleteRow()
         {
-            ScenarioContext.Current.Pending();
+            driver.FindElement(By.Id("remove_0")).Click();
         }
         
         [When(@"I click on the link '(.*)'")]
@@ -89,8 +101,11 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
         [Then(@"a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last (.*) financial years\.")]
         public void ThenACheckBoxAppearsWithTheFollowingLabelIConfirmThatIHavenTReceivedAnyDeMinimisAidInMyLastFinancialYears_(int p0)
         {
+           // bool isElementDisplayed = driver.FindElement(By.Id("isDeMinimisSupportNotreceived")).Displayed;
+            
             var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
             businessDetailsPageFactory.verifyDeMinimisNotReceived();
+            
         }
 
         [Then(@"I see Type of de minimis table drop down option")]

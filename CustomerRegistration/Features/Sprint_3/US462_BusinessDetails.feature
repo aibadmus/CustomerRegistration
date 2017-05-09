@@ -39,16 +39,16 @@ Scenario: Adding additional rows to the de minimis table
 #Given I am completing an application
 When I am on the Business details page
 And I have answered YES to the de minimis question
-When I click on the button Add more rows
+When I click on the Add more rows button
 Then an additional data entry row is added to the bottom of the table
 
-#Scenario: Removing rows to the de minimis table
-#Given I am on the Business details page
-#And I have answered 'yes' to the de minimis question
-#And I have clicked on the button Add more rows
-#When I click on the button Delete row
-#Then the row I am on is removed from the table
-#
+Scenario: Removing rows to the de minimis table
+When I am on the Business details page
+And I have answered YES to the de minimis question
+When I click on the Add more rows button
+When I click on the button Delete row
+Then the row I am on is removed from the table
+
 #Scenario: Clicking on the Companies House website link
 #Given I am on the Business details page
 #When I click on the link 'Companies House website'
