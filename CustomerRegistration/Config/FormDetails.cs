@@ -18,7 +18,7 @@ namespace UnitTestProject1
    
  public class BusinessDetails
     {
-        public string CompanyName { get; set; }
+        public string BusinessName { get; set; }
         public string CompanyRegNo { get; set; }
         public string CompanyTurnover { get; set; }
         public string NumberofEmployees { get; set; }

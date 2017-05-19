@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace UnitTestProject1.CommonElementPageFactory
 {
@@ -39,8 +40,7 @@ namespace UnitTestProject1.CommonElementPageFactory
         public void VerifySaveAndContinueBtn()
         {
             bool isElementDisplayed = SaveAndContinueBtn.Displayed;
-
         }
     }
-    
+
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1.BusinessDetailsPage
 {
@@ -41,6 +41,9 @@ namespace UnitTestProject1.BusinessDetailsPage
 
         [FindsBy(How = How.Id, Using = "minimisSupportNo")]
         public IWebElement MinimisSupportNoRadioBtn { get; set; }
+
+        [FindsBy(How =How.CssSelector,Using = "#minimisFundingHelp > strong > a")]
+        public IWebElement EuropeanCurrencyConversionTool { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(3)")]
         public IWebElement MinimisSupportYesRadioBtn { get; set; }
@@ -158,6 +161,26 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             bool isElementDisplayed = SecondDeMinimisRow.Displayed;
         }
+        public void verifyEuropeanCurrencyConversionToolWebsiteBrowserTab()
+        {
+            var popup = driver.WindowHandles[1]; // handler for the new tab
+            Assert.IsTrue(!string.IsNullOrEmpty(popup)); // tab was opened
+            Assert.AreEqual(driver.SwitchTo().Window(popup).Url, "http://ec.europa.eu/budget/contracts_grants/info_contracts/inforeuro/index_en.cfm"); // url is OK  
+            driver.SwitchTo().Window(driver.WindowHandles[1]).Close(); // close the tab
+            driver.SwitchTo().Window(driver.WindowHandles[0]); // get back to the main window      
+        }
+        public void verifyCompaniesHouseWebsiteBrowserTab()
+        {
+            var popup = driver.WindowHandles[1]; // handler for the new tab
+            Assert.IsTrue(!string.IsNullOrEmpty(popup)); // tab was opened
+            Assert.AreEqual(driver.SwitchTo().Window(popup).Url, "https://beta.companieshouse.gov.uk/"); // url is OK  
+            driver.SwitchTo().Window(driver.WindowHandles[1]).Close(); // close the tab
+            driver.SwitchTo().Window(driver.WindowHandles[0]); // get back to the main window    
+        }
+
+
+
+
         //Select Elements
         public void SelectCompanyRegNoField()
         {
@@ -166,6 +189,10 @@ namespace UnitTestProject1.BusinessDetailsPage
         public void SelectCompanyNameField()
         {
             CompanyNameTxtField.Click();
+        }
+        public void SelectCompaniesHouseWebsite()
+        {
+            CompanyHouseWebsiteLink.Click();
         }
         public void SelectSMERadioBtn()
         {
@@ -193,5 +220,10 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             AddMoreRows.Click();
         }
+        public void SelectEuropeanCurrencyConversionTool()
+        {
+            EuropeanCurrencyConversionTool.Click();
+        }
+
     }
 }   
