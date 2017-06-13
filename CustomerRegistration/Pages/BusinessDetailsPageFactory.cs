@@ -2,12 +2,14 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject1.BusinessDetailsPage
 {
     public class BusinessDetailsPageFactory
     {
         private IWebDriver driver;
+        private object table;
 
         [FindsBy(How = How.Id, Using = "companyName")]
         public IWebElement CompanyNameTxtField { get; set; }
@@ -49,9 +51,11 @@ namespace UnitTestProject1.BusinessDetailsPage
         public IWebElement MinimisSupportYesRadioBtn { get; set; }
 
         [FindsBy(How = How.Id, Using = "isDeMinimisSupportNotreceived")]
-        public IWebElement NotReceivedDeMinimisCheckBox { get; set; }
+        public IWebElement ConfirmNotReceivedDeMinimisCheckBox { get; set; }
 
-        [FindsBy(How =How.CssSelector,Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(2) > td:nth-child(1)")]
+        //[FindsBy(How =How.CssSelector,Using = "#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(2) > td:nth-child(1)")]
+
+        [FindsBy(How = How.Id, Using = "deMinimisType0")]
         public IWebElement TypeOfDeMinimisDropDown { get; set; }
 
         [FindsBy(How = How.CssSelector, Using = "#page--content > div.col-sm-9 > form > section:nth-child(5) > div > div:nth-child(2) > div.panel.panel-default > div > table > tbody > tr:nth-child(2) > td:nth-child(1) > select > option:nth-child(1)")]
@@ -134,8 +138,7 @@ namespace UnitTestProject1.BusinessDetailsPage
         }
         public void verifyDeMinimisNotReceived()
         {
-            //bool isElementDisplayed = driver.FindElement(By.Id("isDeMinimisSupportNotreceived")).Displayed;
-            bool isElementDisplayed = NotReceivedDeMinimisCheckBox.Displayed;
+            bool isElementDisplayed = ConfirmNotReceivedDeMinimisCheckBox.Displayed;
         }
         public void verifyDeMinimisTypeDropDown()
         {
@@ -182,13 +185,15 @@ namespace UnitTestProject1.BusinessDetailsPage
 
 
         //Select Elements
-        public void SelectCompanyRegNoField()
+        public void FillInCompanyRegNoField()
         {
-            CompanyRegNoTxtField.Click();
+            CompanyRegNoTxtField.SendKeys(BusinessDetails.CompanyRegNo);
+
         }
-        public void SelectCompanyNameField()
+        public void FillInCompanyNameField()
         {
-            CompanyNameTxtField.Click();
+            CompanyNameTxtField.SendKeys(BusinessDetails.BusinessName);
+
         }
         public void SelectCompaniesHouseWebsite()
         {
@@ -196,7 +201,9 @@ namespace UnitTestProject1.BusinessDetailsPage
         }
         public void SelectSMERadioBtn()
         {
-            CompanyTypeSMERadioBtn.Click();
+            IWebElement oCheckBox = driver.FindElement(By.Id("companyTypeSME"));
+            System.Threading.Thread.Sleep(5000);
+            oCheckBox.Click();
         }
         public void SelectEnterpriseRadioBtn()
         {
@@ -207,8 +214,6 @@ namespace UnitTestProject1.BusinessDetailsPage
             IWebElement oCheckBox = driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > label:nth-child(3)"));
             System.Threading.Thread.Sleep(5000);
             oCheckBox.Click();
-
-            //IWebElement radioBtn = MinimisSupportYesRadioBtn;
         }
         public void SelectDeMinimisNoRadioBtn()
         {
@@ -224,6 +229,31 @@ namespace UnitTestProject1.BusinessDetailsPage
         {
             EuropeanCurrencyConversionTool.Click();
         }
-
+        public void SelectGeneralDeMinimis()
+        {
+            SelectElement GeneralDeMinimis = new SelectElement(driver.FindElement(By.Id("deMinimisType0")));
+            GeneralDeMinimis.SelectByValue("General de minimis");
+        }
+        public void Select2016_2017FinancialYear()
+        {
+            SelectElement GeneralDeMinimis = new SelectElement(driver.FindElement(By.CssSelector("#page--content > div.col-sm-9 > form > fieldset:nth-child(5) > div.form-sub-group > table > tbody > tr:nth-child(2) > td:nth-child(2) > select")));
+            GeneralDeMinimis.SelectByValue("2016/2017");
+        }
+        public void EnterDeMinimisAmount()
+        {
+            DeMinimisAmountField.SendKeys("150000");
+        }
+        public void SelectConfirmNotReceivedDeMinimis()
+        {
+            ConfirmNotReceivedDeMinimisCheckBox.Click();
+        }
+        public void EnterBusinessName()
+        {
+            CompanyNameTxtField.SendKeys("Just A Cool Company");
+        }
+        public void EnterCompanyHouseRegNumber()
+        {
+            CompanyRegNoTxtField.SendKeys("AbCd1234");
+        }
     }
 }   

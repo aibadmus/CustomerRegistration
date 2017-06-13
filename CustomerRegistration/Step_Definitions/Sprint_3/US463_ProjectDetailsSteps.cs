@@ -1,15 +1,27 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using UnitTestProject1.HomeObjects;
+using UnitTestProject1.BusinessDetailsPage;
+using UnitTestProject1.CommonElementPageFactory;
+using UnitTestProject1.AzureLoginPage;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TechTalk.SpecFlow.Assist;
 
-namespace UnitTestProject1
+
+
+namespace UnitTestProject1.Step_Definitions.Sprint_3
 {
     [Binding]
     public class US463_ProjectDetailsSteps
     {
+        IWebDriver driver;
+
         [Given(@"I am on the Project details page")]
         public void GivenIAmOnTheProjectDetailsPage()
         {
-            ScenarioContext.Current.Pending();
+      
         }
         
         [Given(@"I have uploaded a file")]
@@ -22,9 +34,35 @@ namespace UnitTestProject1
         [When(@"I am on the Project details page")]
         public void WhenIAmOnTheProjectDetailsPage()
         {
-            ScenarioContext.Current.Pending();
+            driver = new ChromeDriver(@"C:\Users\aibad\Test\chromedriver");
+            driver.Navigate().GoToUrl("http://qa1grantweb.azurewebsites.net/grants/home");
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(100));
+
+
+            var grantsHomePageFactory = new GrantsHomePageFactory(driver);
+            grantsHomePageFactory.ClickStartNewApplicationBtn();
+            driver.Navigate().GoToUrl("https://login.microsoftonline.com/QA1ScotEnt.onmicrosoft.com/oauth2/v2.0/authorize?client_id=0bf4fad2-c576-47e1-a689-4796d560fdb1&response_type=code+id_token&redirect_uri=https://qa1grantweb.azurewebsites.net/auth/signin&response_mode=form_post&scope=openid%20offline_access&p=B2C_1_scotent-signin_signup&state=%2Cgrants%2Cbusinessdetails");
+
+
+            var scotentAzureLoginPage = new ScotentAzureLoginPage(driver);
+            scotentAzureLoginPage.AzureLogIn();
+
+            System.Threading.Thread.Sleep(5000);
+
+            var businessDetailsPageFactory = new BusinessDetailsPageFactory(driver);
+            System.Threading.Thread.Sleep(5000);
+            businessDetailsPageFactory.EnterBusinessName();
+            System.Threading.Thread.Sleep(5000);
+            businessDetailsPageFactory.EnterCompanyHouseRegNumber();
+            businessDetailsPageFactory.SelectSMERadioBtn();
+            businessDetailsPageFactory.SelectDeMinimisNoRadioBtn();
+            businessDetailsPageFactory.SelectConfirmNotReceivedDeMinimis();
+            var commonElement = new CommonElement(driver);
+            commonElement.ClickSaveAndContinue();
+            System.Threading.Thread.Sleep(5000);
+
         }
-        
+
         [When(@"I click Choose file")]
         public void WhenIClickChooseFile()
         {

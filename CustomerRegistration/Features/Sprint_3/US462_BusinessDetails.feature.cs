@@ -64,31 +64,31 @@ namespace UnitTestProject1.Features.Sprint_3
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Page is displayed")]
-        public virtual void PageIsDisplayed()
+        [NUnit.Framework.DescriptionAttribute("Business Details page is displayed")]
+        public virtual void BusinessDetailsPageIsDisplayed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Page is displayed", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Business Details page is displayed", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
-#line 5
+#line 4
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 6
+#line 5
 testRunner.Then("I can see the progress indicator control", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 7
+#line 6
 testRunner.And("I can see the Save And continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
+#line 7
 testRunner.And("I can see the Business name field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
+#line 8
 testRunner.And("I can see the Companies House registration number field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
+#line 9
 testRunner.And("I can see the SME radio button option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+#line 10
 testRunner.And("I can see the Large enterprise radio button option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 11
 testRunner.And("I can see the Yes radio button to the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
+#line 12
 testRunner.And("I can see the No radio button to the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 13
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -99,21 +99,21 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void HelpIsDisplayed()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Help is displayed", ((string[])(null)));
-#line 16
+#line 15
 this.ScenarioSetup(scenarioInfo);
-#line 18
+#line 16
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
+#line 17
 testRunner.Then("the help text is displayed under the Company name question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 20
+#line 18
 testRunner.Then("the help text is displayed under the Company registration number question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 19
 testRunner.Then("I see the Companies House Website Link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
+#line 20
 testRunner.Then("the help text is displayed under the SME question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 23
+#line 21
 testRunner.Then("the help text is displayed under the De minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 24
+#line 22
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -124,16 +124,16 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void AnsweringNoToTheDeMinimisQuestion()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering no to the de minimis question", ((string[])(null)));
-#line 27
+#line 25
 this.ScenarioSetup(scenarioInfo);
-#line 29
+#line 26
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 27
 testRunner.When("I select NO on the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 28
 testRunner.Then("a check box appears with the following label: I confirm that I haven\'t received a" +
                     "ny de minimis aid in my last 3 financial years.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 32
+#line 29
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -144,19 +144,19 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void AnsweringYesToTheDeMinimisQuestion()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Answering yes to the de minimis question", ((string[])(null)));
-#line 34
+#line 31
 this.ScenarioSetup(scenarioInfo);
-#line 36
+#line 32
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 33
 testRunner.And("I have answered YES to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 34
 testRunner.Then("I see Type of de minimis table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 39
+#line 35
 testRunner.Then("I see Financial Year table drop down option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
+#line 36
 testRunner.Then("I see Amount text field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 41
+#line 37
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -167,17 +167,17 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void AddingAdditionalRowsToTheDeMinimisTable()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding additional rows to the de minimis table", ((string[])(null)));
-#line 43
+#line 39
 this.ScenarioSetup(scenarioInfo);
-#line 45
+#line 40
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 46
+#line 41
 testRunner.And("I have answered YES to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 42
 testRunner.When("I click on the Add more rows button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
+#line 43
 testRunner.Then("an additional data entry row is added to the bottom of the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 49
+#line 44
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -188,19 +188,19 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void RemovingRowsToTheDeMinimisTable()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Removing rows to the de minimis table", ((string[])(null)));
-#line 51
+#line 46
 this.ScenarioSetup(scenarioInfo);
-#line 52
+#line 47
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 53
+#line 48
 testRunner.And("I have answered YES to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 49
 testRunner.When("I click on the Add more rows button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 50
 testRunner.When("I click on the button Delete row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 51
 testRunner.Then("the row I am on is removed from the table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 57
+#line 52
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -211,16 +211,16 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void ClickingOnTheCompaniesHouseWebsiteLink()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Clicking on the Companies House website link", ((string[])(null)));
-#line 59
+#line 54
 this.ScenarioSetup(scenarioInfo);
-#line 60
+#line 55
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
+#line 56
 testRunner.When("I click on the Companies House website link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
+#line 57
 testRunner.Then("the companies house website opens in a new browser tab: https://beta.companieshou" +
                     "se.gov.uk/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 63
+#line 58
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -231,19 +231,19 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void ClickingOnTheEuropeanCurrencyConversionToolLink()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("clicking on the European Currency Conversion tool link", ((string[])(null)));
-#line 65
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 61
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
+#line 62
 testRunner.And("I have answered YES to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line 63
 testRunner.When("I click on the European Currency Conversion Tool link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 64
 testRunner.Then("the European Commission currency conversion website opens in a new browser tab : " +
                     "http://ec.europa.eu/budget/contracts_grants/info_contracts/inforeuro/index_en.cf" +
                     "m", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 70
+#line 65
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -254,39 +254,34 @@ testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Tabl
         public virtual void CompletingTheFormFieldsAndMovingToTheNextPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Completing the form fields And moving to the next page", ((string[])(null)));
-#line 73
+#line 68
 this.ScenarioSetup(scenarioInfo);
-#line 74
+#line 69
 testRunner.When("I am on the Business details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "BusinessName"});
-            table1.AddRow(new string[] {
-                        "QATest@2Cool"});
-#line 75
-testRunner.And("I enter the Business Name", ((string)(null)), table1, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "BusinessName",
                         "CompanyRegNo"});
-            table2.AddRow(new string[] {
+            table1.AddRow(new string[] {
+                        "QATest@2Cool",
                         "SC12345"});
-#line 78
-testRunner.And("I enter the company registration number", ((string)(null)), table2, "And ");
-#line 81
+#line 70
+testRunner.And("I enter the mandatory fields on the Business Details page", ((string)(null)), table1, "And ");
+#line 73
 testRunner.And("I select the SME radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 74
 testRunner.And("I have answered YES to the de minimis question", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 75
 testRunner.And("I select a Type of De Minimis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 76
 testRunner.And("I select the De Minimis Financial Year", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 77
 testRunner.And("I enter the De Minimis Amount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 78
 testRunner.When("I click on the Save and Continue button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 87
+#line 79
 testRunner.Then("the Project details page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 96
+#line 80
 testRunner.And("I close the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

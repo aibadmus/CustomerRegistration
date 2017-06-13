@@ -32,6 +32,7 @@ namespace UnitTestProject1.CommonElementPageFactory
         public void ClickSaveAndContinue ()
         {
             SaveAndContinueBtn.Click();
+
         }
         public void LoadFile()
         {

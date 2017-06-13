@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
 
 namespace UnitTestProject1
 {
@@ -15,17 +16,19 @@ namespace UnitTestProject1
         public string ConfirmPassword { get; set; }
     }
 
-   
- public class BusinessDetails
+
+    public class BusinessDetails
     {
-        public string BusinessName { get; set; }
-        public string CompanyRegNo { get; set; }
+        
+
+        public static string BusinessName { get; set; }
+        public  static string CompanyRegNo { get; set; }
         public string CompanyTurnover { get; set; }
         public string NumberofEmployees { get; set; }
-
+    }
 
     }
-}
+
 
 
 
