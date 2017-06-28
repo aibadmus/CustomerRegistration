@@ -36,12 +36,6 @@ namespace UnitTestProject1
             ScenarioContext.Current.Pending();
         }
         
-        [Given(@"any mAndatory form field does not contain data")]
-        public void GivenAnyMAndatoryFormFieldDoesNotContainData()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
         [Given(@"I have answered no to the question")]
         public void GivenIHaveAnsweredNoToTheQuestion()
         {

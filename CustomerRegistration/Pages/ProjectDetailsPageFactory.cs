@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 
-namespace UnitTestProject1.ProjectDetailsPageFactory
+namespace UnitTestProject1.ProjectDetailsPage
 {
     public class ProjectDetailsPageFactory
     {
@@ -30,11 +30,17 @@ namespace UnitTestProject1.ProjectDetailsPageFactory
         [FindsBy(How = How.Id, Using = "duration4")]
         public IWebElement Over2YearsDuration { get; set; }
 
+        [FindsBy(How =How.Id,Using = "startDateString")]
+        public IWebElement StartDateField { get; set; }
+
+
         public ProjectDetailsPageFactory(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
+
+        //Send Keys
         public void EnterProjectTitle()
         {
             ProjectTitleTxtField.SendKeys("Digital Transformation");
@@ -44,6 +50,8 @@ namespace UnitTestProject1.ProjectDetailsPageFactory
         {
             ProjectDescriptionTxtField.SendKeys("Digital Transformation of the project is very important for the future");
         }
+
+        //Select Elements
         public void SelectDate()
         {
             DatePickerBtn.Click();
@@ -64,6 +72,26 @@ namespace UnitTestProject1.ProjectDetailsPageFactory
         {
             Over2YearsDuration.Click();
         }
-            
+
+        //Verify Elements
+        public void verifyProjectTitleTxtField()
+        {
+            bool isElementDisplayed = ProjectTitleTxtField.Displayed;
+        }
+        public void verifyProjectDescriptionTxtField()
+        {
+            bool isElementDisplayed = ProjectDescriptionTxtField.Displayed;
+        }
+        public void verifyStartDateField()
+        {
+            bool isElementDisplayed = StartDateField.Displayed;
+        }
+        
+        public void verifyProjectDurationSection()
+        {
+            bool isElementDisplayed = Under6MonthsDuration.Displayed;
+        }
+
+
     }
 }

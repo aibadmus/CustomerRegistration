@@ -15,16 +15,17 @@ namespace UnitTestProject1
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
     }
-
-
     public class BusinessDetails
     {
-        
-
         public static string BusinessName { get; set; }
         public  static string CompanyRegNo { get; set; }
         public string CompanyTurnover { get; set; }
         public string NumberofEmployees { get; set; }
+    }
+    public class ProjectDetails
+    {
+        public static string ProjectTitle { get; set; }
+        public static string ProjectDescription { get; set; }
     }
 
     }

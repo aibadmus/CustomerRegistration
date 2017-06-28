@@ -185,6 +185,7 @@
     <Compile Include="Step_Definitions\Sprint_4_Claims\US587_ClaimDeclarationSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_4_Claims\US588_ConfirmationOfSubmissionSteps.cs" />
     <Compile Include="Step_Definitions\Sprint_4_Claims\US641_ConfirmClaimDetailsSteps.cs" />
+    <Compile Include="TestFixtureHooks1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Default.srprofile">

@@ -12,10 +12,10 @@ using TechTalk.SpecFlow.Assist;
 namespace UnitTestProject1.Step_Definitions.Sprint_3
 {
     [Binding]
-    public class US462_BusinessDetailsSteps
+    public class US462_BusinessDetailsSteps: US463_ProjectDetailsSteps
     {
         IWebDriver driver;
-        private string baseCssSelector;
+        CommonElement commonElement;
 
         [When(@"I am on the Business details page")]
         public void GivenIAmOnTheBusinessDetailsPage()
@@ -89,13 +89,12 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
             businessDetailsPageFactory.SelectCompaniesHouseWebsite();
         }
 
-
         [When(@"I click on the Save and Continue button")]
         public void WhenIClickOnTheSaveAndContinueButton()
         {
-            var commonElement = new CommonElement(driver);
+           /* var commonElement = new CommonElement(driver);
             commonElement.ClickSaveAndContinue();
-
+            */
         }
 
         [Then(@"a check box appears with the following label: I confirm that I haven't received any de minimis aid in my last (.*) financial years\.")]
@@ -170,12 +169,18 @@ namespace UnitTestProject1.Step_Definitions.Sprint_3
             Assert.IsTrue(driver.Title.Equals("Project details - Grants"));
 
         }
-        [Then(@"I can see the Save And continue button")]
-        public void GivenICanSeeTheSaveAndContinueButton()
-        {
-            var commonElement = new CommonElement(driver);
-            commonElement.VerifySaveAndContinueBtn();
-        }
+            [Then(@"I can see the Save And continue button")]
+
+            public void GivenICanSeeTheSaveAndContinueButton()
+            {
+            //bool isElementDisplayed = driver.FindElement(By.Id("saveApplicationCont")).Displayed;
+
+            System.Threading.Thread.Sleep(5000);
+              var commonElement = new CommonElement(driver);
+              commonElement.VerifySaveAndContinueBtn();
+              
+
+            }
 
         [Then(@"I can see the Business name field")]
         public void GivenICanSeeTheBusinessNameField()
